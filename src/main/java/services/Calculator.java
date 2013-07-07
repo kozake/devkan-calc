@@ -17,7 +17,7 @@ public class Calculator {
     	if (a > 0 && b > 0 && (Integer.MAX_VALUE - a) < b) {
     		throw new InternalServerErrorException("ひどい話だ");
     	}
-    	if (a < 0 && b < 0 && (Integer.MAX_VALUE + a) < -1 * b) {
+    	if (a < 0 && b < 0 && (Integer.MIN_VALUE - a) > b) {
     		throw new InternalServerErrorException("ひどい話だ");
     	}
         return String.valueOf(a + b);
