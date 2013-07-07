@@ -13,6 +13,9 @@ public class Calculator {
     @GET
     @Path("add")
     public String add(@QueryParam("a")int a, @QueryParam("b")int b){
+    	if (Integer.MAX_VALUE - a) < b) {
+    		throw new InternalServerErrorException("ひどい話だ");
+    	}
         return String.valueOf(a + b);
     }
     
