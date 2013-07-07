@@ -13,6 +13,27 @@ public class Calculator {
     @GET
     @Path("add")
     public String add(@QueryParam("a")int a, @QueryParam("b")int b){
-        return "2";
+        return String.valueOf(a + b);
+    }
+    
+    @GET
+    @Path("subtract")
+    public String subtract(@QueryParam("a")int a, @QueryParam("b")int b){
+        return String.valueOf(a - b);
+    }
+
+    @GET
+    @Path("multiply")
+    public String multiply(@QueryParam("a")int a, @QueryParam("b")int b){
+        return String.valueOf(a * b);
+    }
+
+    @GET
+    @Path("divide")
+    public String divide(@QueryParam("a")int a, @QueryParam("b")int b){
+    	if (b == 0) {
+    		return "error::divide by zero";
+    	}
+        return String.valueOf(a / b);
     }
 }
